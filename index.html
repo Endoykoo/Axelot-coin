@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+        /* Ensure the page is displayed correctly on mobile */
+        body {
+            background-color: black; /* Set background to black */
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            margin: 0;
+        }
+
+        /* Styling the image buttons container */
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 20px;
+            width: 100%;
+        }
+
+        /* Each image button */
+        .button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .button img {
+            width: 50px; /* Smaller image size */
+            height: 50px; /* Smaller image size */
+            margin-bottom: 5px;
+            border-radius: 10px; /* Optional: rounded corners for the image */
+        }
+
+        .button p {
+            color: white;
+            margin: 0;
+            font-size: 12px; /* Smaller text */
+        }
+
+        /* Ensure buttons are at the bottom of the screen */
+        .button-container {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="button-container">
+        <div class="button">
+            <img src="home-img.png" alt="Button 1">
+            <p>Text 1</p>
+        </div>
+        <div class="button">
+            <img src="image2.png" alt="Button 2">
+            <p>Text 2</p>
+        </div>
+        <div class="button">
+            <img src="image3.png" alt="Button 3">
+            <p>Text 3</p>
+        </div>
+    </div>
+
+</body>
+</html>

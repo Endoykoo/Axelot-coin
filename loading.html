@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading</title>
+    <style>
+        /* Hide on devices larger than mobile */
+        @media (min-width: 768px) {
+            body {
+                display: none;
+            }
+        }
+
+        /* Styling the body for mobile devices */
+        body {
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        /* Styling the loader (circle) */
+        .loader {
+            border: 16px solid transparent; /* Make the outer circle transparent */
+            border-top: 16px solid white; /* White top border for spinning effect */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 1.5s linear infinite; /* Spinning effect */
+        }
+
+        /* Keyframe for the spinning animation */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            50% { border-top-color: transparent; } /* At half rotation, make the top transparent */
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = '/index'; // Redirect after 10 seconds
+        }, 3000);
+    </script>
+</body>
+</html>
