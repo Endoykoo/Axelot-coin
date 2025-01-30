@@ -1,73 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-    <style>
-        /* Ensure the page is displayed correctly on mobile */
-        body {
-            background-color: rgb(255, 255, 255); /* Set background to white */
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            margin: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Mobile Index Page</title>
+  <style>
+    /* General styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 100vh;
+      touch-action: manipulation; /* Disable double-tap zoom */
+    }
 
-        /* Styling the image buttons container */
-        .button-container {
-            display: flex;
-            justify-content: space-around;
-            padding-bottom: 20px;
-            width: 100%;
-        }
+    /* Coin slider at the top */
+    .coin-slider {
+      width: 90%;
+      max-width: 300px;
+      height: 50px;
+      background-color: #f0f0f0; /* Light gray background */
+      border: 2px solid black; /* Black border */
+      border-radius: 25px; /* Rounded corners */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 15px;
+      position: fixed;
+      top: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
 
-        /* Each image button */
-        .button {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+    /* Coin icon */
+    .coin-slider img {
+      width: 30px;
+      height: 30px;
+    }
 
-        .button img {
-            width: 50px; /* Smaller image size */
-            height: 50px; /* Smaller image size */
-            margin-bottom: 5px;
-            border-radius: 10px; /* Optional: rounded corners for the image */
-        }
+    /* Coin text */
+    .coin-slider span {
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+    }
 
-        .button p {
-            color: black; /* Changed text color to black */
-            margin: 0;
-            font-size: 18px; /* Larger text size */
-            font-family: Arial, sans-serif; /* Normal font */
-        }
+    /* Clacker (circle) */
+    .clacker {
+      width: 120px; /* Bigger size */
+      height: 120px; /* Bigger size */
+      background-color: #f0f0f0; /* Same gray as coin box */
+      border: 2px solid black; /* Black border */
+      border-radius: 50%; /* Perfect circle */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.5s ease; /* Smooth spin animation */
+      touch-action: none; /* Disable touch gestures on the clacker */
+    }
 
-        /* Ensure buttons are at the bottom of the screen */
-        .button-container {
-            position: fixed;
-            bottom: 30px;
-            width: 100%;
-        }
-    </style>
+    /* Clacker image */
+    .clacker img {
+      width: 60px; /* Adjust image size */
+      height: 60px; /* Adjust image size */
+    }
+
+    /* Spin animation */
+    .clacker.spin {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+
+    /* Container for the buttons */
+    .nav-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      background-color: white;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      border-top: 1px solid #ddd;
+    }
+
+    /* Button styles */
+    .nav-button {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-button img {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 5px;
+    }
+
+    .nav-button span {
+      color: black;
+      font-size: 12px;
+    }
+  </style>
 </head>
 <body>
+  <!-- Coin slider at the top -->
+  <div class="coin-slider">
+    <img src="coin-icon.png" alt="Coins"> <!-- Replace with your coin icon -->
+    <span id="coin-count">100 Coins</span> <!-- Coin count -->
+  </div>
 
-    <div class="button-container">
-        <div class="button">
-            <img src="hose-icon.png" alt="Button 1">
-        </div>
-        <div class="button">
-            <img src="wallet-icon.jpg" alt="Button 2">
-        </div>
-        <div class="button">
-            <img src="accound-icon.png" alt="Button 3">
-        </div>
-    </div>
+  <!-- Clacker (circle) -->
+  <div class="clacker" id="clacker">
+    <img src="clacker-icon.png" alt="Click Me"> <!-- Replace with your image -->
+  </div>
 
+  <!-- Navigation container -->
+  <div class="nav-container">
+    <!-- Button 1 -->
+    <a href="#" class="nav-button">
+      <img src="image1.png" alt="Home">
+      <span>Home</span>
+    </a>
+    <!-- Button 2 -->
+    <a href="#" class="nav-button">
+      <img src="image2.png" alt="Search">
+      <span>Search</span>
+    </a>
+    <!-- Button 3 -->
+    <a href="#" class="nav-button">
+      <img src="image3.png" alt="Profile">
+      <span>Profile</span>
+    </a>
+    <!-- Button 4 -->
+    <a href="#" class="nav-button">
+      <img src="image4.png" alt="Messages">
+      <span>Messages</span>
+    </a>
+    <!-- Button 5 -->
+    <a href="#" class="nav-button">
+      <img src="image5.png" alt="Settings">
+      <span>Settings</span>
+    </a>
+  </div>
+
+  <script>
+    // JavaScript for clacker functionality
+    const clacker = document.getElementById('clacker');
+    const coinCount = document.getElementById('coin-count');
+
+    let coins = 100; // Initial coin count
+
+    clacker.addEventListener('click', () => {
+      // Add spin animation
+      clacker.classList.add('spin');
+
+      // Increment coin count
+      coins += 1;
+      coinCount.textContent = `${coins} Coins`;
+
+      // Remove spin class after animation ends
+      setTimeout(() => {
+        clacker.classList.remove('spin');
+      }, 500); // Match the duration of the spin animation
+    });
+  </script>
 </body>
 </html>
 
