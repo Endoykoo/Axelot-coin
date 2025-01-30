@@ -32,7 +32,7 @@
       justify-content: space-between;
       padding: 0 15px;
       position: fixed;
-      top: 20px;
+      top: 10px; /* 10px from the top */
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     }
 
@@ -51,8 +51,10 @@
 
     /* Clacker (circle) */
     .clacker {
-      width: 120px; /* Bigger size */
-      height: 120px; /* Bigger size */
+      width: calc(100vh - 120px); /* Full height minus coin slider and nav bar */
+      height: calc(100vh - 120px); /* Full height minus coin slider and nav bar */
+      max-width: 90vw; /* Prevent overflow on wider screens */
+      max-height: 90vw; /* Prevent overflow on wider screens */
       background-color: #f0f0f0; /* Same gray as coin box */
       border: 2px solid black; /* Black border */
       border-radius: 50%; /* Perfect circle */
@@ -61,22 +63,22 @@
       justify-content: center;
       cursor: pointer;
       position: fixed;
-      top: 50%;
+      top: calc(50px + 20px); /* Coin slider height + 10px gap */
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       transition: transform 0.5s ease; /* Smooth spin animation */
       touch-action: none; /* Disable touch gestures on the clacker */
     }
 
     /* Clacker image */
     .clacker img {
-      width: 60px; /* Adjust image size */
-      height: 60px; /* Adjust image size */
+      width: 50%; /* Image takes up half the clacker size */
+      height: 50%; /* Image takes up half the clacker size */
     }
 
     /* Spin animation */
     .clacker.spin {
-      transform: translate(-50%, -50%) rotate(360deg);
+      transform: translateX(-50%) rotate(360deg);
     }
 
     /* Container for the buttons */
