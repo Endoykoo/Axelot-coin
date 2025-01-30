@@ -20,16 +20,20 @@
             justify-content: center;
             align-items: center;
             margin: 0;
+            position: relative; /* Added for positioning the loader */
         }
 
         /* Styling the loader (circle) */
         .loader {
-            border: 16px solid transparent; /* Make the outer circle transparent */
-            border-top: 16px solid black; /* Black top border for spinning effect */
+            border: 8px solid transparent; /* Reduced border width */
+            border-top: 8px solid black; /* Reduced border width */
             border-radius: 50%;
-            width: 120px;
-            height: 120px;
+            width: 60px; /* Reduced size */
+            height: 60px; /* Reduced size */
             animation: spin 1.5s linear infinite; /* Spinning effect */
+            position: absolute; /* Position the loader */
+            bottom: 20px; /* Position from the bottom */
+            right: 20px; /* Position from the right */
         }
 
         /* Keyframe for the spinning animation */
@@ -38,14 +42,26 @@
             50% { border-top-color: transparent; } /* At half rotation, make the top transparent */
             100% { transform: rotate(360deg); }
         }
+
+        /* Styling for the text */
+        .center-text {
+            font-size: 54px; /* Adjust font size as needed */
+            font-weight: bold;
+            text-align: center;
+            position: absolute; /* Position the text */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Offset to truly center */
+        }
     </style>
 </head>
 <body>
+    <div class="center-text">Bobi Coin</div>
     <div class="loader"></div>
 
     <script>
         setTimeout(() => {
-            window.location.href = 'https://endoykoo.github.io/Axelot-coin/index.html'; // Redirect after 10 seconds
+            window.location.href = 'https://endoykoo.github.io/Axelot-coin/index.html'; // Redirect after 3 seconds
         }, 3000);
     </script>
 </body>
